@@ -61,8 +61,8 @@ int main(){
                 }
 
                 // applying FDM
-                double x_term = ((D*delta_t)/(delta_x*delta_x))*(composition[right_x][j]-(2*composition[i][j])+composition[left_x][j]) ;
-                double y_term = ((D*delta_t)/(delta_y*delta_y))*(composition[i][right_y]-(2*composition[i][j])+composition[i][left_y]) ; 
+                double x_term = ((D*delta_t)/(delta_x*delta_x))*(composition[i][left_x]-(2*composition[i][j])+composition[i][right_x]) ;
+                double y_term = ((D*delta_t)/(delta_y*delta_y))*(composition[left_y][j]-(2*composition[i][j])+composition[right_y][j]) ; 
                 new_composition[i][j] = composition[i][j] + x_term + y_term ;
 
         }
