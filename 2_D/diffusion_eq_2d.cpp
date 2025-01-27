@@ -18,7 +18,7 @@ int main(){
     ofstream solution("Initial Composition.txt");
     for(int i=0;i<ny;i++){
         for(int j=0;j<nx;j++){
-            if((j>=(nx/4) && j< (3*nx)/4 ) && (i>=(ny/4) && i< (3*ny)/4)) composition[i][j]=1;
+            if( (j>=(nx/4) && j< (3*nx)/4 )) composition[i][j]=1;
             else composition[i][j]=0;
             solution<<composition[i][j]<<" ";
         }
