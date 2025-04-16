@@ -21,7 +21,7 @@ int main(){
     ofstream file("Initial composition.txt");
     //Initial condition 
     for(int i=0;i<nx;i++){
-        if(i>((nx*9)/20) && i<(nx*11)/20 ) composition[i]=1; //updated boundary condition 90-110 = 1 else 0.2 
+        if(i>=((nx*9)/20) && i<(nx*11)/20 ) composition[i]=1; //updated boundary condition 90-110 = 1 else 0.2 
         else composition[i]=0.2;
         file <<composition[i]<<" ";
     }
