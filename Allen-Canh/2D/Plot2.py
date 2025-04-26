@@ -6,7 +6,7 @@ time =[]
 nx =200
 ny=200
 size=(ny,nx)
-n = 10 #Number of files
+n = 5 #Number of files
 
 
 # reading Initial composition
@@ -21,9 +21,9 @@ data.append(c[99])
 f.close()
 
 for i in range(1,n+1):
-    time.append(i*100)
+    time.append(i*20)
     composition=np.empty(size,dtype=float)
-    filename = "solution at t= "+ str(i*100) + ".txt"
+    filename = "solution at t= "+ str(i*20) + ".txt"
     f=open(filename,"r")
     j=0
     for line in f:
@@ -33,22 +33,21 @@ for i in range(1,n+1):
     f.close()
     data.append(composition[99])
 radius=[]
-for i in range(0,11):
+for i in range(0,n+1):
     S = data[i]
     for j in range(0,nx):
         if S[j]>=0.5:
             x = ((0.5-S[j-1])/(S[j]-S[j-1]))+(j-1)
             r=100-x
-            radius.append(r)
+            radius.append(r*r)
             break
 
-print(time)
-print(radius)
-# fig , ax = plt.subplots()
-# ax.set_xlabel("Time")
-# ax.set_ylabel("R^2")
-# ax.plot(time,radius)
-# # Show the plots
-# plt.tight_layout()
-# plt.show()
-
+# print(time)
+# print(radius)
+fig , ax = plt.subplots()
+ax.set_xlabel("Time")
+ax.set_ylabel("R^2")
+ax.plot(time,radius)
+# Show the plots
+plt.tight_layout()
+plt.show()
