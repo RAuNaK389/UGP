@@ -2,6 +2,7 @@
 #include<string>
 #include<fstream>
 #include<math.h>
+#include<vector>
 using namespace std;
 #define nx 200
 #define ny 200
